@@ -2,10 +2,6 @@ body {
     background-color: white;
 }
 
-* {
-    margin: 0;
-}
-
 h1 {
     background-color: #6B6B6B;
     text-align: center;
@@ -14,6 +10,9 @@ h1 {
     height: 60px;
     padding-top: 50px;
     font-weight: 500;
+    margin-left: -9px;
+    width: 102%;
+    margin-top: -8px;
 }
 
 h2 {
@@ -27,13 +26,17 @@ h2 {
     padding: 25px 0;
 }
 
-#submitEmployeeInfoButton {
-    float: right;
-    margin-right: 41.75%;
-    margin-top: 20px;
-    background-color: #E9E9E9;
+button {
     border-radius: 10%;
     border: 1px solid black;
+}
+
+#submitEmployeeInfoButton {
+    float: right;
+    margin-right: 37.75%;
+    margin-top: 20px;
+    background-color: #E9E9E9;
+   
 }
 
 #mainContent {
