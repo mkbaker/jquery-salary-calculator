@@ -21,5 +21,10 @@ function handleAddClick(){
                 <td><button class="deleteEmployee">Delete</button></td>
             </tr>`
     $('tbody').append(employeeRow);
-
+    //clear input values
+    $('#firstNameInput').val('');
+    $('#lastNameInput').val('');
+    $('#idNumberInput').val('');
+    $('#titleInput').val('');
+    $('#annualSalaryInput').val('');
 }
