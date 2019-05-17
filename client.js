@@ -3,6 +3,7 @@ $(document).ready(onReady);
 function onReady() {
     console.log('henlo');
     $('#submitEmployeeInfoButton').on('click', handleAddClick);
+    $('table').on('click', '.deleteEmployee', handleDeleteClick);
 }
 
 function handleAddClick(){
@@ -27,4 +28,9 @@ function handleAddClick(){
     $('#idNumberInput').val('');
     $('#titleInput').val('');
     $('#annualSalaryInput').val('');
+}
+
+function handleDeleteClick(){
+    console.log('in handleDeleteClick')
+    $(this).closest('tr').remove();
 }

@@ -62,6 +62,7 @@ th {
     background-color: #D2D2D2;
 }
 
+/* adds shading to every odd numbered <tr> */
 tbody tr:nth-child(odd) {
     background-color: #f2f2f2;
 }
