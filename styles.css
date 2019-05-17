@@ -1,0 +1,64 @@
+body {
+    background-color: white;
+}
+
+* {
+    margin: 0;
+}
+
+h1 {
+    background-color: #6B6B6B;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    height: 60px;
+    padding-top: 50px;
+    font-weight: 500;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+#userInputs {
+    margin: auto;
+    width: 90%;
+    padding: 25px 0;
+}
+
+#submitEmployeeInfoButton {
+    float: right;
+    margin-right: 41.75%;
+    margin-top: 20px;
+    background-color: #E9E9E9;
+    border-radius: 10%;
+    border: 1px solid black;
+}
+
+#mainContent {
+    margin: auto;
+    width: 90%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: left;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th {
+    background-color: #D2D2D2;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
