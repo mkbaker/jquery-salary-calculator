@@ -23,12 +23,16 @@ function handleAddClick() {
             </tr>`
     $('tbody').append(employeeRow);
 
-    //run addMonthlyCost function?? 
-    let monthlyCost = addMonthlyCosts();
+    //run addMonthlyCost function, divide by 12 for one month, round to nearest integer
+    let monthlyCost = Math.round(addMonthlyCosts()/12);
 
     console.log(monthlyCost);
 
-    $('#monthlyCost').text(Math.round(monthlyCost/12));
+    $('#monthlyCost').text(monthlyCost);
+
+    if(monthlyCost > 20000){
+        $('#monthlyCost').css('color', 'red');
+    }
 
     //clear input values
     $('input').val('');
