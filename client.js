@@ -6,7 +6,7 @@ function onReady() {
     $('table').on('click', '.deleteEmployee', handleDeleteClick);
 }
 
-function handleAddClick(){
+function handleAddClick() {
     console.log('in handleAddClick');
     let firstNameIn = $('#firstNameInput').val();
     let lastNameIn = $('#lastNameInput').val();
@@ -18,19 +18,75 @@ function handleAddClick(){
                 <td>${lastNameIn}</td>
                 <td>${idIn}</td>
                 <td>${titleIn}</td>
-                <td>${annualSalaryIn}</td>
+                <td class="salaryColumn">${annualSalaryIn}</td>
                 <td><button class="deleteEmployee">Delete</button></td>
             </tr>`
     $('tbody').append(employeeRow);
+
+    //run addMonthlyCost function?? 
+    let monthlyCost = addMonthlyCosts();
+
+    monthlyCost = Number(monthlyCost) + Number(annualSalaryIn);
+
+    console.log(monthlyCost);
+
+    $('#monthlyCost').text(monthlyCost);
+
     //clear input values
-    $('#firstNameInput').val('');
-    $('#lastNameInput').val('');
-    $('#idNumberInput').val('');
-    $('#titleInput').val('');
-    $('#annualSalaryInput').val('');
+    $('input').val('');
+
 }
 
-function handleDeleteClick(){
+function handleDeleteClick() {
     console.log('in handleDeleteClick')
     $(this).closest('tr').remove();
 }
+
+//calculate monthly costs
+function addMonthlyCosts() {
+    console.log('in addMonthlyCosts');
+
+    // create array of all values with class .salaryColumn
+    let salaryArray = [];
+    let yearlySum = 0;
+    $('.salaryColumn').each(function () {
+        salaryArray.push($(this).text());
+    });
+    console.log(salaryArray);
+
+    //convert to numbers
+    // let result = [];
+
+    // for (i = 0, i < salaryArray.length; i++ ) {
+    //     result.push(+salaryArray[i]);
+    // }
+    //loop thru array and add values
+    // for (i = 0; i < result.length; i++) {
+    //     yearlySum = Number(yearlySum) + Number(salaryArray[i]);
+    // }
+    //return sum of all values 
+    return yearlySum;
+
+
+
+
+
+    // //the following code adapted from https://stackoverflow.com/questions/9293492/sum-all-values-for-table-column-based-on-class
+    // //further research needed
+    // let sum=0;
+    // // iterate through each td based on class and add the values
+    // $(".salaryColumn").each(function () {
+    //     let value = $(this).text();
+    //     // add only if the value is number
+    //     if (!isNaN(value) && value.length != 0) {
+    //         sum += parseFloat(value);
+    //     }
+    // });
+    // ;
+    // return sum;
+    // //end adapted copy code 
+}
+//add total of annual salary column
+//divide cost by 12
+//display this number on the dom
+//if it's over 20,000, display in red

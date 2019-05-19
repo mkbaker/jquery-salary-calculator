@@ -20,6 +20,10 @@ h2 {
     font-weight: 500;
 }
 
+h3 {
+    font-family: sans-serif;
+    font-weight: 400;
+}
 #userInputs {
     margin: auto;
     width: 90%;
@@ -65,4 +69,9 @@ th {
 /* adds shading to every odd numbered <tr> */
 tbody tr:nth-child(odd) {
     background-color: #f2f2f2;
+}
+
+#costText {
+    text-align: right;
+    margin-right: 10%;
 }
