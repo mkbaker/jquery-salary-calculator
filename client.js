@@ -42,7 +42,7 @@ function handleDeleteClick() {
     $(this).closest('tr').remove();
 }
 
-//calculate monthly costs
+//calculate value of all <td> in Annual Salary column
 function addMonthlyCosts() {
     console.log('in addMonthlyCosts');
 
@@ -54,16 +54,14 @@ function addMonthlyCosts() {
     });
     console.log(salaryArray);
 
-    //convert to numbers
-    // let result = [];
+    // The arr.map(Number) simply runs over all items in array, executes the Number function on every item and adds the result into a new array
+    let  salaryArrayNumbers = salaryArray.map(Number);
 
-    // for (i = 0, i < salaryArray.length; i++ ) {
-    //     result.push(+salaryArray[i]);
-    // }
+    console.log(salaryArrayNumbers);
     //loop thru array and add values
-    // for (i = 0; i < result.length; i++) {
-    //     yearlySum = Number(yearlySum) + Number(salaryArray[i]);
-    // }
+    for (i = 0; i < salaryArrayNumbers.length; i++) {
+        yearlySum = Number(yearlySum) + Number(salaryArrayNumbers[i]);
+    }
     //return sum of all values 
     return yearlySum;
 
